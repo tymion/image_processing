@@ -13,6 +13,7 @@ CLASSES = $(shell find $(SOURCEDIR) -name '*.java')
 default: classes
 
 classes: $(CLASSES:.java=.class)
+	cp $(SOURCESDIR)/Main.class .
 
 clean:
 	find . -name *.class -exec rm -rf {} \;

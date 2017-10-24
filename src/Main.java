@@ -97,12 +97,16 @@ public class Main
     public static void main(String [ ] args)
     {
         try {
+            /*
             if (args.length < 1) {
                 System.out.println("Invalid argument!");
                 return;
             }
             System.out.println("Processing file: " + args[0]);
             Photo photo = new Photo(args[0]);
+            */
+            String name = new String("resources/left.jpg");
+            Photo photo = new Photo(name);
             //Region region = null;
             String outFilename = null;
             //region = new Region(photo.getWidth(), photo.getHeight());
@@ -110,8 +114,8 @@ public class Main
             //region.removeShape(new Ellipse2D.Double(photo.getHeight() / 2 - 200, photo.getWidth() / 2 - 200, 400, 400));
             //float[] out = processFile(photo, region);
             float[] out = processFile_2(photo);
-            outFilename = getOutFileName(args[0]);
-            System.out.println("Saving file:" + outFilename);
+            outFilename = getOutFileName(name);
+            System.out.println("Saving file: " + outFilename);
             photo.saveBin(outFilename, out);
         } catch (FileNotFoundException e) {
             System.out.println("Exception: " + e.getMessage());
